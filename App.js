@@ -2,12 +2,30 @@ import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { appStyles } from "./styles/globalStyles";
+import {
+  Nunito_400Regular,
+  Nunito_600SemiBold,
+  Nunito_700Bold,
+  Nunito_800ExtraBold,
+} from "@expo-google-fonts/nunito";
+import { useFonts } from "expo-font";
+import AppLoading from "expo-app-loading";
 import LoginScreen from "./screens/LoginScreen";
 import Homecreen from "./screens/HomeScreen";
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
+  let [fontsLoaded, error] = useFonts({
+    Nunito_400Regular,
+    Nunito_600SemiBold,
+    Nunito_700Bold,
+    Nunito_800ExtraBold,
+  });
+  if (!fontsLoaded) {
+    return <AppLoading />;
+  }
   return (
     <NavigationContainer>
       <Stack.Navigator>
@@ -24,8 +42,10 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "#FF5733",
     alignItems: "center",
     justifyContent: "center",
+    fontFamily: "Nunito-Regular",
+    fontSize: 70,
   },
 });
