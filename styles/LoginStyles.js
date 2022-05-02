@@ -1,9 +1,9 @@
 import { StyleSheet } from "react-native";
 import React from "react";
-import { Nunito_400Regular } from "@expo-google-fonts/nunito";
 
 //Fonts
 const nunitoRegular = "Nunito_400Regular";
+const comfortaaBold = "Comfortaa_700Bold";
 
 //Font sizes
 
@@ -20,6 +20,42 @@ const LoginStyles = StyleSheet.create({
     backgroundColor: primary,
     justifyContent: "center",
     alignItems: "center",
+  },
+  titleContainer: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  titleText: {
+    fontFamily: comfortaaBold,
+    fontSize: 70,
+    color: white,
+  },
+  inputContainer: {
+    flex: 3,
+    display: "flex",
+    backgroundColor: white,
+    width: "100%",
+    alignItems: "center",
+    paddingVertical: 25,
+    paddingHorizontal: 50,
+    borderTopLeftRadius: 35,
+    borderTopRightRadius: 35,
+    shadowColor: black,
+    shadowOffset: {
+      width: 0,
+      height: -10,
+    },
+    shadowOpacity: 0.51,
+    shadowRadius: 13.16,
+  },
+  input: {
+    borderBottomColor: "#B7B7B7",
+  },
+  caption: {
+    fontFamily: nunitoRegular,
+    fontSize: 18,
+    color: alt,
   },
   //   view: {},
   //   text: {},

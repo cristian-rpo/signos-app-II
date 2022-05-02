@@ -9,6 +9,7 @@ import {
   Nunito_700Bold,
   Nunito_800ExtraBold,
 } from "@expo-google-fonts/nunito";
+import { Comfortaa_700Bold } from "@expo-google-fonts/comfortaa";
 import { useFonts } from "expo-font";
 import AppLoading from "expo-app-loading";
 import LoginScreen from "./screens/LoginScreen";
@@ -22,6 +23,7 @@ export default function App() {
     Nunito_600SemiBold,
     Nunito_700Bold,
     Nunito_800ExtraBold,
+    Comfortaa_700Bold,
   });
   if (!fontsLoaded) {
     return <AppLoading />;
