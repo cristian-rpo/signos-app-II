@@ -21,7 +21,11 @@ const LoginScreen = () => {
 
         <View style={styles.inputBox}>
           <FontAwesome5 style={styles.inputIcon} name="user-alt" size={18} />
-          <TextInput style={styles.input} placeholder="Email" />
+          <TextInput
+            style={styles.input}
+            placeholder="Email"
+            textContentType="emailAddress"
+          />
         </View>
 
         <View style={styles.inputBox}>
@@ -35,10 +39,13 @@ const LoginScreen = () => {
             style={styles.input}
             placeholder="Contraseña"
             secureTextEntry
+            textContentType="password"
           />
           <FontAwesome5 name="eye" size={18} />
         </View>
-        <Button text="Iniciar sesión" color="primary" />
+        <Text style={styles.forgot}>¿Olvidaste la contraseña?</Text>
+        <Button label="Iniciar sesión" type="active" />
+        <Button label="Registrarme" type="alt" />
       </View>
     </KeyboardAvoidingView>
   );

@@ -1,23 +1,25 @@
 import { StyleSheet } from "react-native";
 import React from "react";
+import colors from "./colors";
+import fonts from "./fonts";
 
-//Fonts
-const nunitoRegular = "Nunito_400Regular";
-const comfortaaBold = "Comfortaa_700Bold";
+// //Fonts
+// const nunitoRegular = "Nunito_400Regular";
+// const comfortaaBold = "Comfortaa_700Bold";
 
-//Font sizes
+// //Font sizes
 
-//Colors
-const primary = "#4585EE";
-const secondary = "#162744";
-const alt = "#C6C6C6";
-const black = "#343A40";
-const white = "#FFFFFF";
+// //Colors
+// const primary = "#4585EE";
+// const secondary = "#162744";
+// const alt = "#C6C6C6";
+// const black = "#343A40";
+// const white = "#FFFFFF";
 
 const LoginStyles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: primary,
+    backgroundColor: colors.primary,
     justifyContent: "center",
     alignItems: "center",
   },
@@ -27,25 +29,34 @@ const LoginStyles = StyleSheet.create({
     alignItems: "center",
   },
   titleText: {
-    fontFamily: comfortaaBold,
+    fontFamily: fonts.confortaa,
     fontSize: 70,
-    color: white,
+    textShadowColor: "rgba(0, 0, 0, 0.30)",
+    textShadowOffset: { width: -1, height: 1 },
+    textShadowRadius: 6,
+    color: colors.white,
   },
   mainIcon: {
     marginTop: "10%",
-    color: secondary,
+    color: colors.secondary,
+  },
+  caption: {
+    marginTop: "5%",
+    fontFamily: colors.nunito,
+    fontSize: 18,
+    color: colors.alt,
   },
   inputContainer: {
     flex: 3,
     display: "flex",
-    backgroundColor: white,
+    backgroundColor: colors.white,
     width: "100%",
     alignItems: "center",
     paddingVertical: 25,
     paddingHorizontal: 50,
     borderTopLeftRadius: 35,
     borderTopRightRadius: 35,
-    shadowColor: black,
+    shadowColor: colors.black,
     shadowOffset: {
       width: 0,
       height: -10,
@@ -62,24 +73,25 @@ const LoginStyles = StyleSheet.create({
     width: "90%",
   },
   input: {
-    fontFamily: nunitoRegular,
+    fontFamily: fonts.nunitoRegular,
     flex: 1,
-    color: secondary,
-    borderBottomColor: alt,
+    color: colors.secondary,
+    borderBottomColor: colors.alt,
     borderBottomWidth: 2,
-    borderBottomColor: alt,
+    borderBottomColor: colors.alt,
   },
   inputIcon: {
-    color: alt,
+    color: colors.alt,
     marginRight: "5%",
   },
-  caption: {
-    marginTop: "5%",
-    fontFamily: nunitoRegular,
-    fontSize: 18,
-    color: alt,
+  forgot: {
+    fontFamily: fonts.nunito,
+    color: colors.primary,
+    alignSelf: "flex-end",
+    marginTop: 5,
+    marginRight: 5,
+    textDecorationLine: "underline",
+    marginBottom: "5%",
   },
-  //   view: {},
-  //   text: {},
 });
 export default LoginStyles;
