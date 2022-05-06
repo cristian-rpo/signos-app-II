@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { appStyles } from "./styles/globalStyles";
+import "./styles/colors";
 import {
   Nunito_400Regular,
   Nunito_600SemiBold,
@@ -30,6 +31,7 @@ export default function App() {
   }
   return (
     <NavigationContainer>
+      <StatusBar style="light" />
       <Stack.Navigator>
         <Stack.Screen
           options={{ headerShown: false }}

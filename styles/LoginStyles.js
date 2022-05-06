@@ -31,6 +31,10 @@ const LoginStyles = StyleSheet.create({
     fontSize: 70,
     color: white,
   },
+  mainIcon: {
+    marginTop: "10%",
+    color: secondary,
+  },
   inputContainer: {
     flex: 3,
     display: "flex",
@@ -49,10 +53,28 @@ const LoginStyles = StyleSheet.create({
     shadowOpacity: 0.51,
     shadowRadius: 13.16,
   },
+  inputBox: {
+    display: "flex",
+    flexDirection: "row",
+    marginTop: "10%",
+    alignItems: "center",
+    justifyContent: "space-between",
+    width: "90%",
+  },
   input: {
-    borderBottomColor: "#B7B7B7",
+    fontFamily: nunitoRegular,
+    flex: 1,
+    color: secondary,
+    borderBottomColor: alt,
+    borderBottomWidth: 2,
+    borderBottomColor: alt,
+  },
+  inputIcon: {
+    color: alt,
+    marginRight: "5%",
   },
   caption: {
+    marginTop: "5%",
     fontFamily: nunitoRegular,
     fontSize: 18,
     color: alt,
