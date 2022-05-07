@@ -22,6 +22,7 @@ const LoginStyles = StyleSheet.create({
     backgroundColor: colors.primary,
     justifyContent: "center",
     alignItems: "center",
+    paddingTop: "5%",
   },
   titleContainer: {
     flex: 1,
@@ -36,15 +37,27 @@ const LoginStyles = StyleSheet.create({
     textShadowRadius: 6,
     color: colors.white,
   },
+  iconContainer: {
+    display: "flex",
+    width: 90,
+    height: 90,
+    overflow: "hidden",
+    borderRadius: 100,
+    marginTop: -60,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: colors.primary,
+    borderColor: colors.white,
+    borderWidth: 10,
+  },
   mainIcon: {
-    marginTop: "10%",
-    color: colors.secondary,
+    color: colors.white,
   },
   caption: {
     marginTop: "5%",
-    fontFamily: colors.nunito,
+    fontFamily: fonts.nunito,
     fontSize: 18,
-    color: colors.alt,
+    color: colors.black,
   },
   inputContainer: {
     flex: 3,
@@ -73,7 +86,7 @@ const LoginStyles = StyleSheet.create({
     width: "90%",
   },
   input: {
-    fontFamily: fonts.nunitoRegular,
+    fontFamily: fonts.nunito,
     flex: 1,
     color: colors.secondary,
     borderBottomColor: colors.alt,
