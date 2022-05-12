@@ -3,7 +3,7 @@ import colors from "../styles/colors";
 import fonts from "../styles/fonts";
 import React from "react";
 
-const Button = ({ label, type }) => {
+const Button = ({ label, type, action }) => {
   const styles = StyleSheet.create({
     active: {
       width: "100%",
@@ -49,7 +49,7 @@ const Button = ({ label, type }) => {
   });
 
   return (
-    <TouchableOpacity style={styles[type]}>
+    <TouchableOpacity style={styles[type]} onPress={action}>
       <Text style={styles.label}>{label}</Text>
     </TouchableOpacity>
   );

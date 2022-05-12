@@ -14,7 +14,8 @@ import { Comfortaa_700Bold } from "@expo-google-fonts/comfortaa";
 import { useFonts } from "expo-font";
 import AppLoading from "expo-app-loading";
 import LoginScreen from "./screens/LoginScreen";
-import Homecreen from "./screens/HomeScreen";
+import HomeScreen from "./screens/HomeScreen";
+import SignUp from "./screens/SignUpScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -35,9 +36,11 @@ export default function App() {
       <Stack.Navigator>
         <Stack.Screen
           options={{ headerShown: false }}
-          name="LoginScreen"
+          name="Login"
           component={LoginScreen}
         />
+        <Stack.Screen name="SignUp" component={SignUp} />
+        <Stack.Screen name="Home" component={HomeScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

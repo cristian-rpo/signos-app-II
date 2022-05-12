@@ -18,6 +18,7 @@ import fonts from "./fonts";
 
 const LoginStyles = StyleSheet.create({
   container: {
+    display: "flex",
     flex: 1,
     backgroundColor: colors.primary,
     justifyContent: "center",
@@ -28,6 +29,7 @@ const LoginStyles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+    minHeight: 140,
   },
   titleText: {
     fontFamily: fonts.confortaa,
@@ -48,7 +50,7 @@ const LoginStyles = StyleSheet.create({
     justifyContent: "center",
     backgroundColor: colors.primary,
     borderColor: colors.white,
-    borderWidth: 10,
+    borderWidth: 9,
   },
   mainIcon: {
     color: colors.white,
