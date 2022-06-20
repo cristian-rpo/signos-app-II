@@ -3,15 +3,15 @@ import { FontAwesome5 } from "@expo/vector-icons";
 import Button from "../components/Button";
 import styles from "../styles/LoginStyles";
 import React, { useState, useEffect } from "react";
+// import { useNavigation } from "@react-navigation/native";
+// import { auth, getAuth } from "../config/firebase";
+// import { signInWithEmailAndPassword } from "@firebase/auth";
 import { auth } from "../firebase";
-import { useNavigation } from "@react-navigation/native";
 
-const LoginScreen = () => {
+const LoginScreen = ({ navigation }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-
-  const navigation = useNavigation();
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
@@ -23,13 +23,24 @@ const LoginScreen = () => {
     return unsubscribe;
   }, []);
 
+  const handleLogin = () => {
+    if (email !== "" && password !== "") {
+      auth
+        .signInWithEmailAndPassword(email, password)
+        .then(() => {
+          console.log("Login success");
+          navigation.navigate("Home");
+        })
+        .catch((err) => Alert.alert("Login error", err.message));
+    }
+  };
+
   const handleSignUp = () => {
     auth
       .createUserWithEmailAndPassword(email, password)
       .then((userCredentials) => {
         const user = userCredentials.user;
         console.log(user.email);
-        alert;
       })
       .catch((error) => Alert.alert(error.message));
   };
@@ -85,8 +96,14 @@ const LoginScreen = () => {
 
         <Text style={styles.forgot}>¿Olvidaste la contraseña?</Text>
 
-        <Button label="Iniciar sesión" type="active" />
-        <Button label="Registrarme" type="alt" action={handleSignUp} />
+        <Button label="Iniciar sesión" type="active" action={handleLogin} />
+        <Button
+          label="Registrarme"
+          type="alt"
+          action={() => {
+            navigation.navigate("SignUp");
+          }}
+        />
       </View>
     </View>
   );
